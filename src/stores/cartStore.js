@@ -44,6 +44,12 @@ export const useCartStore= defineStore('cart',()=>{
         //把cartList中的每一项的selected都设置为选中状态
         cartList.value.forEach((item)=>item.selected=selected)
     }
+    //已选择数量
+    const selectedCount=computed(()=>cartList.value.filter(item=>item.selected).reduce((a,c)=>a+c.count,0))
+
+    //已选择商品价钱合计
+    const selectedPrice=computed(()=>cartList.value.filter(item=>item.selected).reduce((a,c)=>a+c.count*c.price,0))
+
     return{
         cartList,
         addCart,
@@ -52,7 +58,9 @@ export const useCartStore= defineStore('cart',()=>{
         allPrice,
         singleCheck,
         isAll,
-        allCheck
+        allCheck,
+        selectedCount,
+        selectedPrice
     }
 },{
     persist:true
