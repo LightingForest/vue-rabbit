@@ -29,12 +29,20 @@ export const useCartStore= defineStore('cart',()=>{
     //总价
     const  allPrice= computed(()=>cartList.value.reduce((a,c)=>a+c.count*c.price,0))
 
+    //单选功能
+    const singleCheck=(skuId,selected)=>{
+        //通过skuId 找到要修改的某一项
+        const item= cartList.value.find((item)=>item.skuId===skuId)
+        item.selected=selected
+    }
+
     return{
         cartList,
         addCart,
         delCart,
         allCount,
-        allPrice
+        allPrice,
+        singleCheck
     }
 },{
     persist:true
