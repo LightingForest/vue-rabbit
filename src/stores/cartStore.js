@@ -36,13 +36,23 @@ export const useCartStore= defineStore('cart',()=>{
         item.selected=selected
     }
 
+    //是否全选
+    const isAll=computed(()=>cartList.value.every((item)=>item.selected))
+
+    //全选功能
+    const allCheck=(selected)=>{
+        //把cartList中的每一项的selected都设置为选中状态
+        cartList.value.forEach((item)=>item.selected=selected)
+    }
     return{
         cartList,
         addCart,
         delCart,
         allCount,
         allPrice,
-        singleCheck
+        singleCheck,
+        isAll,
+        allCheck
     }
 },{
     persist:true
