@@ -3,8 +3,7 @@
 </script>
 
 <template>
-<!--  一级路由出口-->
-  <RouterView/>
+我是登录页
 </template>
 
 <style scoped>
