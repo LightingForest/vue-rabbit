@@ -1,6 +1,6 @@
 <script setup>
 import {getCategoryApi} from "@/apis/category.js";
-import {onMounted, ref} from "vue";
+import {onBeforeUpdate, onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import {getBannerApi} from "@/apis/home.js";
 import GoodsItem from "@/views/Home/components/GoodsItem.vue";
@@ -23,6 +23,12 @@ const getBanner=async ()=>{
   bannerList.value=res.result
 }
 onMounted(()=>getBanner())
+
+//路由变化时，可以把分类接口重新发送
+// onBeforeUpdate((to)=>{
+//   console.log('路由变化')
+//   getCategory(to.params.id)
+// })
 </script>
 
 <template>
