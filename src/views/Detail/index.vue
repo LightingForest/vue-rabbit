@@ -4,7 +4,7 @@ import {useRoute} from "vue-router";
 import {getDetailApi} from "@/apis/detail.js";
 import DetailHot from "@/views/Detail/components/DetailHot.vue";
 import ImageView from "@/components/ImageView/index.vue"
-import XtxSku from "@/components/XtxSku/index.vue";
+// import XtxSku from "@/components/XtxSku/index.vue";
 
 const goods=ref({})
 const route=useRoute()
