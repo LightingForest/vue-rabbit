@@ -3,16 +3,19 @@
 
 //准备表单对象
 import {ref} from "vue";
-import {LoginApi} from "@/apis/user.js";
+// import {LoginApi} from "@/apis/user.js";
 
 // import 'element-plus/es/components/message/style/css'
 import 'element-plus/theme-chalk/el-message.css'
 import { ElMessage } from 'element-plus'
 import {useRouter} from "vue-router";
+import {useUserStore} from "@/stores/user.js";
+
+const userStore=useUserStore()
 
 const form=ref({
-  account:'',
-  password:'',
+  account:'13012345683',
+  password:'123456',
   agree:true
 })
 
@@ -50,8 +53,9 @@ const doLogin=()=>{
     console.log(valid)
     if(valid){
       //TODO LOGIN
-      const res= await LoginApi({account,password})
-      console.log(res)
+      // const res= await LoginApi({account,password})
+      // console.log(res)
+      userStore.getUserInfo({account,password})
       //提示用户
       ElMessage({type:'success',message:'登录成功'})
       //跳转首页
