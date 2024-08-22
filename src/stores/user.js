@@ -8,10 +8,15 @@ export const useUserStore = defineStore('user', () => {
         const res=await LoginApi({account,password})
         userInfo.value=res.result
     }
+    //清除用户信息数据
+    const clearUserInfo=()=>{
+        userInfo.value={}
+    }
 
     return {
         userInfo,
-        getUserInfo
+        getUserInfo,
+        clearUserInfo
     }
 }, {
     persist: true,
