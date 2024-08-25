@@ -118,7 +118,10 @@ const doLogin=()=>{
           <a href="javascript:;">搜索推荐</a>
           <a href="javascript:;">友情链接</a>
         </p>
-        <p>CopyRight &copy; 小兔鲜儿</p>
+        <p>
+          CopyRight &copy; 小兔鲜儿
+          <a href="https://beian.miit.gov.cn">陕ICP备2024045516号</a>
+        </p>
       </div>
     </footer>
   </div>

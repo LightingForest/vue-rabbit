@@ -13,8 +13,6 @@ const confirm=()=>{
   //返回到登录页
   router.push('/login')
 }
-
-
 </script>
 
 <template>
